@@ -1,0 +1,61 @@
+
+<%-include('../layouts/header')%>
+
+
+<!-- --------------------------------------------------- LOGIN----------------------------------------------- -->
+
+
+<section id="userLogin">
+    <div class="login-page">
+    <div class="container">
+        <div class="row justify-content-center align-item-center mx-auto">
+            <div class="col-sm-8 col-md-6 col-lg-5 col-xl-4 text-center custome-shadow">
+            <form action="/login" method="post">
+                <div class="card text-center">
+                    <div class="card-header bg-primary">
+                    <h1 class="fw-bold text-light">Login</h1>
+                    </div>
+                    <div class="card-body">
+                        <% 
+                        if(typeof message!='undefined'){
+                        %>
+                            <p class="text-center fs-5" style="color:rgb(3, 116, 3);">    <%= message %></p>
+                        <%
+                        }
+                        %>
+                     
+                      <div class="form-floating my-3">
+                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
+                        <label for="floatingInput">Email address</label>
+                      </div>
+                     
+                      <div class="form-floating">
+                       
+                        <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required>
+                        <label for="floatingPassword">Password</label>
+                      </div>
+
+                <a href="/sendForgetPassMail" class="links fs-0 d-flex justify-content-start text-decoration-none mt-2">Forget Password?</a>
+
+                        <input type="submit" class="form-control btn btn-primary mt-3" id="sub-button">
+                        
+                
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        <p class="mb-1">Don't have an account ?
+                        <a href="/resister" class="links">Resister </a> </p>
+                        
+                        <p class="mb-1">If your email is not varify ?
+                        <a href="/emailVerify" class="links fs-0">Verify Email</a> </p>
+                    </div>
+                    
+                    
+                  </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+  </section>
+
+<%-include('../layouts/footer')%>

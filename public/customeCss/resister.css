@@ -1,0 +1,13 @@
+.resister-page{
+    background-color: rgb(223,231,247);
+ 
+}
+.resister-page .form-control:focus {
+    box-shadow: none;
+}
+
+.warning-mess {
+color:#fcb00c
+}
+
+

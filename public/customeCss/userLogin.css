@@ -1,0 +1,33 @@
+
+
+#userLogin{
+    background: rgb(223,231,247);
+    
+    width: 100%;
+    
+}
+
+#userLogin .custome-shadow{
+  
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 0;
+}
+#userLogin .login-page  {
+    
+    padding-top:100px;
+    height:78vh;
+
+   
+}
+#userLogin .card-footer a{
+    text-decoration: none;
+}
+
+#userLogin .form-control:focus {
+    box-shadow: none;
+}
+@media (max-width:290px){
+    #userLogin .login-page  {
+        padding:30px;
+    }
+}

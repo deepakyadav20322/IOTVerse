@@ -1,0 +1,12 @@
+.updateEvent{
+    min-height: 100vh;
+    background-color: rgb(223,231,247);
+
+}
+.updateEvent .form-control:focus{
+
+    box-shadow: none;
+}
+.updateEvent textarea{
+    resize: none;
+}

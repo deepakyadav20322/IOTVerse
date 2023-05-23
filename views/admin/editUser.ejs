@@ -1,0 +1,57 @@
+<%-include('../adminLayouts/adminHeader')%>
+
+<% monthArr = ['01','02','03','04','05','06','07','08','09','10','11','12'] %>
+
+<div class="editUserBYadmin py-2">
+
+    <!-- --------------form container for edit user-------------------------------  -->
+    <div class="container py-5 border border-1 rounded-2 border-dark" >
+        <h3 class="text-center">Update User</h3>
+        <form class="row g-3 justify-content-center mx-auto" method="post" action="/admin/edit-user" >
+                 <!-- -----it is for take specific user id for recognisation---- -->
+                 <input type="hidden" name="user_id" value="<%=user._id%>"/>
+                 
+            <div class="col-md-5">
+              <label for="Firstname" class="form-label">First Name</label>
+              <input type="text" name="fname" class="form-control" id="Firstname"  value="<%=user.fname%>" required>
+            </div>
+            <div class="col-md-5">
+              <label for="Lastname" class="form-label">Last Name</label>
+              <input type="text" name="lastname" class="form-control" id="Lastname"  value="<%=user.lastname%>" required>
+            </div>
+            <div class="col-md-10">
+              <label for="emailAddress" class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" id="emailAddress" value="<%=user.email%>"  placeholder="abc123@gmail.com">
+            </div>
+            <div class="col-md-10 p">
+              <label for="phoneNumber" class="form-label">Mobile no:</label>
+              <input type="number" name="mobile" class="form-control" value="<%=user.mobile%>"  id="phoneNumber" >
+            </div>
+            
+            <div class="col-md-5">
+              <label for="inputGender" class="form-label">Gender</label>
+              <select id="inputGender" name="gender" class="form-select">
+                <option value="" <% if (!user.gender) { %>selected<% } %>>Select...</option>
+                <option value="male" <% if (user.gender === 'male') { %>selected<% } %>>Male</option>
+                <option value="female" <% if (user.gender === 'female') { %>selected<% } %>>Female</option>
+                <option value="other" <% if (user.gender === 'other') { %>selected<% } %>>Other</option>
+              </select>
+            </div>
+            <div class="col-md-5">
+              <label for="DOB" class="form-label">D.O.B</label>
+              <input type="date" name="DOB" value="<%
+              const date = new Date(user.DOB);
+              const dateDay = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+              const formattedDate =date.getFullYear()+ '-' +monthArr[date.getMonth()] + '-' +dateDay;
+              %><%= date.getFullYear()+'-'+monthArr[date.getMonth()]+'-'+dateDay; %>" class="form-control" id="DOB">
+            
+            </div>
+            
+            <div class="col-md-8 text-center">
+              <button type="submit" class="btn btn-primary">Update User</button>
+            </div>
+          </form>
+    </div>
+</div>
+
+<%-include('../adminLayouts/adminFooter')%>

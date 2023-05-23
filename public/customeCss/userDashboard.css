@@ -1,0 +1,46 @@
+.user-dash-board .box-3 .custome-badge-box{
+    width: 300px;
+    height: 150px;
+    /* margin:1.5rem auto; */
+}
+.profile-img img{
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    border: 1px solid #0D6AD0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user-dash-board{
+    background-color: rgb(223,231,247);
+}
+
+
+.box-1 .box-one-low-part{
+    background-color: #0D6AD0;
+}
+
+
+/* --------================== Update Profile Css For Image =================-----------  */
+
+
+.profile-img-update img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin:10px auto;
+}
+
+
+
+@media (max-width:990px){
+
+
+.user-dash-board .box-3 .custome-badge-box{
+     margin-left: 1rem;
+     margin-right: 1rem;
+}
+
+}

@@ -1,0 +1,29 @@
+
+
+<%-include('../adminLayouts/adminHeader')%>
+     
+      <section id="admin-login">
+         <div class="admin-login-main">
+            <div class="admin-login-main-upper">
+               IOT_Verse
+            </div>
+            <div class="admin-login-main-lower">
+               <h2>SIGN IN</h2>
+                <%
+                if(typeof message!="undefined"){
+                  %>
+                  <p style="color:green"><%= message%></p>
+                  <%                
+               }
+                %>
+               
+               <form action="/admin/adminLogin" method="post" id="admin_login_form">
+                  <input type="email" name="email" placeholder="Email" required>
+                  <input type="password" name="password" placeholder="password" required>
+                  <input type="submit" value="SUBMIT">
+               </form>
+            </div>
+         </div>
+      </section>
+
+<%-include('../adminLayouts/adminFooter')%>

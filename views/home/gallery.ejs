@@ -1,0 +1,51 @@
+<%-include('../layouts/header')%>
+
+<section class="Img-gallery py-2" style="min-height: 73vh;">
+    <div class="container">
+        <div class="row bg-secondary my-3 ">
+            
+            <div class="col-12 text-bold text-white fs-4 py-3 ">
+                <img class="mx-2" style="width:100px; height:70px" src="/website-img/camaraImg1.png" alt="camaraLogo">
+               The Image Gallery
+            </div>
+        </div>
+    </div>
+         
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="container-fluid">
+                    <div class="row justify-content-center align-item-center">
+                       
+                        <%
+                        if(galleryData.length > 0){
+                            for(let i= 0; i < galleryData.length; i++){
+                            %>
+
+                            <div class="col-12 col-lg-4 col-md-6 gall-img">
+                                <img src="/galleryImages/<%=galleryData[i].name%>" alt="image">
+                            </div>
+
+                        
+                        <%
+                    }
+                }
+                else{
+                    %>
+                    <h3 class="text-center my-5"> ---- No Any Photos Available ----</h3>
+                    <%
+                }
+                %>
+                                            
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<%-include('../layouts/footer')%>

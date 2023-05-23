@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+*,
+*::before,
+*::after{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+
+:root{
+    --blue: #1e90ff;
+    --white: #ffffff;
+    /* --primeryFont: */
+    
+}
+
+::-webkit-scrollbar{width:0.845rem;};
+::-webkit-scrollbar-track{
+    background:rgb(31, 31, 31);
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--blue);
+}
+.main-btn{
+    display: inline-block;
+  border-radius: 50rem;
+  transition: 0.8s;
+  padding: 10px 35px;
+  background-color:#0D6EFD;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+  border: 1px solid #0D6EFD;
+}
+.main-btn:hover{
+   background-color: #ffffff;
+   color:#0D6EFD;
+}
+  
+ /* custome border radius and hover effect css for bootstrap btb  */
+.custome-resi-width{
+    width: 110px;
+    font-size: 18px;
+}
+
+ /* Css for header section  */
+#header{
+    position: sticky;
+    top:0;
+    left:0;
+    z-index: 300;
+    box-shadow:2px 0 20px 0px #aaa;
+    
+}
+#header .navbar-nav li { 
+    padding:10px ;
+
+}
+#header .navbar-nav li a{ 
+    color:black;
+    font-weight: 600;
+
+}
+#header .navbar-nav li a:hover{
+    color: #1e90ff;
+}
+
+.banner-wraper{
+    padding-top: 60px;
+    background-color: rgb(223,231,247);
+}
+.banner-wraper .hero-content h1{
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.banner-wraper .hero-content img{
+    width:500px;
+    height: 400px;
+}
+
+#header .navbar-nav{
+    text-align: center;
+    background-color: aliceblue;
+    padding-bottom: 15px;
+}
+
+/* -----------------------------------Css for card section ----------------------------------- */
+
+.card-wrapper hr{
+    height: 5px !important;
+    color: #0D6EFD;
+    background-color: #0D6EFD
+
+}
+
+/* ------------------ Css for Counter section-------------------- */
+#counter .counter-section{
+    background-color: #0D6EFD;
+    padding: 2.2rem 0;
+}
+
+
+#counter .counter-section p{
+    color: #ffffff;
+    text-transform: uppercase;
+    
+}
+#counter .counter-section h2{
+    color: #ffffff;
+    
+}
+#counter .counter-section .row .border{
+    border-bottom: 2px solid #ffffff;
+}
+
+/*-------------------- Media quries for hero-image ----------------------  */
+
+@media (max-width:500px){
+    .banner-wraper .hero-content img{
+        
+        height: 300px;
+    }
+}
+@media (max-width:991px){
+    #header .navbar-nav .nav-item .nav-link:hover{
+  background-color: #1e90ff;
+  color: white;
+    }
+    .custome-resi-width{
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:800px){
+    .banner-wraper .hero-content h1{
+        font-size: 3rem;
+        
+    }
+   
+}

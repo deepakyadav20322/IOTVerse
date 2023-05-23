@@ -1,0 +1,44 @@
+<%-include('../adminLayouts/adminHeader')%>
+
+<section class="gallery-img-form" style="background-color:rgb(223,231,247);min-height:100vh;width:100%;">
+    <div class="container">
+        <div class="row py-3">
+            <div class="col-12 d-flex justify-content-end align-item-center">
+                <a href="/admin/adminDashboard" class="btn btn-primary">&#8592; Go Dashboard</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row py-4 justify-content-center align-item-center  ">
+            <div class="col-md-8 p-sm-5 border border-dark border-1 ">
+                <form action="/admin/uploadGalleryImg" method="post" enctype="multipart/form-data">
+                    <h2 class="text-center">Upload Image</h2>
+
+
+                    <% 
+                    if(typeof message1!='undefined'  ){
+                    %>
+            
+                    <p class="text-center fs-4" style="color:rgb(3, 116, 3);">  <span class="warning-mess"> &#9673; </span> <%= message1.msg %></p>
+                    <%}
+                   else if(typeof message!='undefined'){ %>
+                  <p class="text-center fs-4" style="color:rgb(3, 116, 3);">  <span class="warning-mess"> &#9673; </span> <%= message %></p>
+                      <% } %>
+
+
+
+                    <div class="mb-3">
+                        <label for="formFileSingel" class="form-label">Uploads file (Single)</label>
+                        <input class="form-control" name="gallery" type="file" id="formFileSingel" >
+                      </div>
+                      <div class="col-12 text-center my-2">
+                        <input type="submit" value="UPLOAD" class="btn btn-primary">
+                      </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%-include('../adminLayouts/adminFooter')%>

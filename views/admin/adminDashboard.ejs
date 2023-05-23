@@ -1,0 +1,275 @@
+
+<%-include('../adminLayouts/adminHeader')%>
+
+
+   <!-- ---------======== Off Canavas for Navigation (sidebar){For navigating the link in the top-body part}========== ----------------------------  -->
+  
+
+  
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header bg-dark">
+      <h5 class="offcanvas-title text-white  fs-4" id="offcanvasExampleLabel">ADMIN CONTROL</h5>
+      <button type="button" class="btn-close text-reset bg-white btn-secondary" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body bg-dark">
+        <nav>
+          <ul class="list-unstyled bg-primary">
+            <li class="border border-1 p-3 fw-bold"><a href="/admin/new-user" class="text-decoration-none text-white cursor-pointer">ADD NEW USER</a></li>
+            <li class="border border-1 p-3 fw-bold"><a href="/admin/adminEventPage" class="text-decoration-none text-white cursor-pointer">ADMIN EVENT PAGE</a></li>
+            <li class="border border-1 p-3 fw-bold"><a href="/admin/addEvent" class="text-decoration-none text-white cursor-pointer">ADD NEW EVENTS</a></li>
+
+             <!-- Button trigger modal to upload img by anchor(<a>) tag -->
+            <li class="border border-1 p-3 fw-bold"><a href="/admin/uploadGalleryImg" class="text-decoration-none text-white cursor-pointer">UPLOAD GALLERY IMAGE</a></li>
+            <li class="border border-1 p-3 fw-bold"><a href="#" class="text-decoration-none text-white cursor-pointer">Send Email To All Users</a></li>
+            
+
+          </ul>
+        </nav>
+      </div>
+  </div>
+
+                  <!-- ------------------------ Off Canvas End----------------------------------- -->
+
+
+  <!-- =============== Model code for UPLOAD GALLERY IMAGE  by admin (pop model)========================  -->
+
+              <!-- ????????????????????????????????????? -->
+
+  <!-- -------------------- End of upload gallery image modal----------  -->
+
+
+
+
+<!-- .................... ADmin Main Section Start.............................       -->
+
+ <section class="admin-main" style="background-color: rgb(223,231,247);">
+   
+  
+    <div class="top-boby">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-around align-items-center border border-dark">
+                <!-- <i class="text-left px-3">Toggle</i> -->
+                <!-- <i class="fa-solid fa-bars-staggered text-left px-3 fs-3"></i> -->
+                <a class="btn btn-primary btn-sm admin-toggle" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <i class="fa-solid fa-bars-staggered text-left px-3 fs-3"></i>
+                  </a>
+                
+                <p class="text-center fw-bold fs-md-2 fw-bold">Welcome Admin( <%=admin.fname%> <%=admin.lastname%> )</p>
+                <img src="/userProfileImage/<%=admin.image%>" alt="" class="border border-dark mx-2" style="width: 100px; height: 100px; border-radius: 50%;">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- --------------------------------------------three boxex code -------------------------------- -->
+    <div class="main-boxes">
+        <div class="container my-4">
+        <div class="row d-flex justify-content-between mx-2 mx-sm-0">
+          <div class="col-md-3 border border-dark my-3 text-center bg-success text-white rounded-3">
+            <div class="box">
+              <div class="box-header">
+                <h2>Total User</h2>
+                <!-- <a href="#">View all</a> -->
+              </div>
+              <div class="box-body">
+                <h3><%=usersLength%></h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 border border-dark  my-3 text-center bg-success text-white rounded-3">
+            <div class="box">
+              <div class="box-header">
+                <h2>Varified User</h2>
+                <!-- <a href="#">View all</a> -->
+              </div>
+              <div class="box-body">
+                <h3><%=varifyUser%></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 border border-dark  my-3 text-center bg-danger text-white rounded-3">
+            <div class="box">
+              <div class="box-header">
+                <h2>Unvarified User</h2>
+                <!-- <a href="#">View all</a> -->
+              </div>
+              <div class="box-body">
+                <h3><%=notVarifyuser%></h3>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+      </div>
+               <!-- -------------------------------------********************* --------------- -->
+
+    <!-- ================****************Some Basics Admin buttons(Links)-----------=============================== -->
+              <div class="admin-basic-buttons">
+                <div class="container">
+                    <div class="row border border-dark justify-content-center bg-secondary" >
+                        <div class="col-sm-12 col-md-10 col-lg-6 mx-auto my-3 px-sm-0 px-1">
+                            
+                            <a href="/admin/export-excel" class="btn btn-primary p-3 mt-md-0 mt-2 fw-bold ms-1">EXPORT DATA(Excel)</a>
+                            <a href="/admin/export-pdf" class="btn btn-primary p-3 mt-md-0 mt-2 fw-bold">EXPORT PDF</a>
+                            <a href="/admin/adminlogout" class="btn btn-primary p-3 mt-md-0 mt-2 fw-bold">LOGOUT</a>
+                            <a href="/admin/adminDashboard" class="btn btn-primary p-3 mt-md-0 mt-2 fw-bold me-1">Dashboard</a>
+                           
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <!-- -------------------------- code for Search bar------------------------- -->
+              <div class="users_search_bar my-3">
+                <div class="container">
+                    <div class="row border border-dark" >
+                        <div class="col-12 mx-auto my-3">
+                            
+                            <section id="search-section">
+                                <form action="">
+                                 <input type="text" name="search" autocomplete="off" placeholder="email,mobile,name">
+                                 <input type="submit" value="SEARCH">
+                                </form>
+                            </section>
+
+                                   <!-- --------- This seach box is made by bootstrap ---------- -->
+                            <!-- <div class="mb-3 row  flex-md-row flex-column justify-content-enter align-items-center">
+                              
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" >
+                                </div>
+                                <input type="submit"  class="col-sm-2 col-md-1 col-form-control btn btn-primary mt-md-0 mt-2" style="width:100px;  ">
+                            -->
+                               <!-- -----------------------***********8 ----------------------------- -->
+
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+
+  <!-- ============================= Showing the all users data on table form ================================   -->
+
+           <section class="all-users-data my-2">
+            <div class="show-data-users">
+                <h3 class="text-center">All Users Data</h3>
+                <div class="container">
+                    <div class="row show-user-row">
+                        <div class="col-12">
+              
+
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead class=" border border-bottom-1 table-secondary text-center">
+                                  <tr class="border border-dark border-bottom-2">
+                                   
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">D.O.B</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Verified Status</th>
+                                    <th scope="col">Actions</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                  
+                                    <% 
+                                    if(users.length > 0){
+                                    for(let i= 0; i < users.length ; i++){
+                                        %> 
+                                        <tr class="border border-dark border-bottom-1 ">
+                                             <td><%= users[i].fname %> <%= users[i].lastname %></td>
+                                            
+                                             <td><%= users[i].email%></td>
+                                             <td><%= users[i].mobile%></td>
+                                             <td><% 
+                                                    date = new Date(users[i].DOB);
+                                                %>
+                                                <%= 
+                                                    date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
+                                                %>
+                                            </td> 
+                                             <td><%= users[i].gender%></td>
+                                             
+                                            
+                                             
+                                             <td>
+                                                <%
+                                             if(users[i].is_varified==0){
+                                               %>
+                                              <p class="text-danger"> Not verified</p>
+                                              <%
+                                             }
+                                             else{
+                                                %>
+                                              <p class="text-success">verified</p>
+                                              <%
+                                             }
+                                             %>
+                                             </td>
+                                             <td>
+                                              <!-- <a href="/admin/delete-user?id=<%=users[i]._id%>" class="mx-1"><i class="fa-solid fa-trash delete text-danger"></i></a>  -->
+
+                     <!-- ------------------------------Delete User ---------------------------------->
+                                              <!-- Button trigger modal gor delete -->
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUser<%=i%>">
+                                                 Delete
+                                                </button>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="deleteUser<%=i%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">DELETE USER</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <p class="text-start">Are you sure, you wnat to delete the user?</p>
+                                                         <p class="text-dark text-start fw-bold">Name:- <span><%=users[i].fname%> <%=users[i].lastname%></span></p>
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                                        <!-- <button type="button" class="btn btn-primary">Yes</button> -->
+                                                        <a href="/admin/delete-user?id=<%=users[i]._id%>" class="mx-1 btn btn-danger">YES</a> 
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+
+         <!-- ------------------------------Delete user  END ------------------- -->
+
+
+                                                <a href="/admin/edit-user?id=<%=users[i]._id%>" class="mx-1"><i class="fa-solid fa-pen update text-success"></i></a></td>
+                                            </td>   
+                                             
+                                        </tr>
+                                        <%
+                                    }
+                                    }
+                                    else{
+                                        %>
+                                    <tr>
+                                        <td class="fw-bold" colspan="7">NO Data Available</td>
+                                    </tr>
+                                    <%
+                                    }
+                                    
+                                    %>
+                                  
+                                </tbody>
+                              </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </section>
+
+  </section>
+
+  <%-include('../adminLayouts/adminFooter')%>

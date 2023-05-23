@@ -1,0 +1,49 @@
+<%-include('../layouts/header')%>
+
+<section class="wrapper-forget-mail">
+  <div class="container">
+    <div
+      class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center"
+    >
+      <div class="logo"></div>
+      <form action="/sendForgetPassMail" class="rounded shadow bg-white p-5" method="post">
+        <div class="logo1">
+          <img src="/website-img/user_icon_img.png" class="img-fluid mb-4" alt="user_icon"/>
+        </div>
+        <h3 class="text-center mb-2">Send Forget Password Link?</h3>
+
+        <% 
+        if(typeof message!='undefined'){
+        %>
+            <p class="text-center" style="color: rgb(155, 3, 3);">    <%= message %></p>
+           <% 
+       
+        }
+        %> 
+        
+        <div class="fw-narmal text-muted mb-4">
+          Enter your email to reset your password
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+
+        <input
+          type="submit"
+          class="btn btn-primary rounded-pill my-4 px-4"
+          value="SEND"
+        />
+      </form>
+    </div>
+  </div>
+</section>
+
+<%-include('../layouts/footer')%>

@@ -1,0 +1,118 @@
+
+<%-include('../adminLayouts/adminHeader')%>
+
+<!-- ---------------- Resistration section-------------  -->
+
+<section class="resister-page py-5">
+    <div class="container border border-dark rounded">
+        <h2 class="text-center border-bottom border-3 border-dark text-primary fw-bold mt-2 mb-3 pb-2"> ADD NEW USER </h2>
+        
+
+        <% 
+        if(typeof message1!='undefined'  ){
+        %>
+
+            <p class="text-center fs-4" style="color:rgb(3, 116, 3);">  <span class="warning-mess"> &#9673; </span> <%= message1.msg %></p>
+        <%}
+        else if(typeof message!='undefined'){ %>
+          <p class="text-center fs-4" style="color:rgb(3, 116, 3);">  <span class="warning-mess"> &#9673; </span> <%= message %></p>
+          <% } %>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-8">
+            <form action="/admin/new-user" method="post" enctype="multipart/form-data" id="myresisterForm">
+                <div class="row justify-content-center">
+       
+                 <!-- --- First Name----  -->
+                 <div class="col-6">
+                   <div class="form-floating mb-3">
+                       <input type="text" class="form-control fname-val" id="floatingInput" name="fname" required placeholder="First Name">
+                       <label for="floatingInput">First Name</label>
+                     </div>
+               </div>
+       
+                <!-- --- Last  Name----  -->
+                <div class="col-6">
+                   <div class="form-floating mb-3">
+                       <input type="text" class="form-control lastname-val" id="floatingInput" name="lastname" required placeholder="Last Name">
+                       <label for="floatingInput">Last Name</label>
+                     </div>
+               </div>
+       
+                   <!-- --- Email Name----  -->
+                   <div class="col-12">
+                       <div class="form-floating mb-3">
+                           <input type="email" class="form-control email-val" id="floatingInput" name="email" placeholder="name@example.com">
+                           <label for="floatingInput">Email</label>
+                         </div>
+                   </div>
+                   <!-- --- Password---  -->
+                   <div class="col-12 mt-3">
+                         <div class="form-floating">
+                           <input type="password" class="form-control password-val pass1" id="floatingPassword" name="password" placeholder="Password">
+                           <label for="floatingPassword">Password *(Read Instruction below) </label>
+                         </div>
+                   </div>
+       
+                   <!-- --- Date of Birth---  -->
+                   <div class="col-12 mt-3">
+                         <div class="form-floating">
+                           <input type="Date" class="form-control" id="floatingInput" name="DOB" placeholder="D.O.B">
+                           <!-- <label for="floatingPassword">D.O.B</label> -->
+                         </div>
+                   </div>
+
+                        <!-- --- Mobile no.--- -->
+                        <div class="col-12 mt-3">
+                        <div class="form-floating">
+                            <input type="number" class="form-control mobile-val" id="floatingInput" name="mobile" placeholder="Mobile No:"maxlength="10"  required>
+                            <label for="floatingInput">Mobile No:</label>
+                        </div>
+                    </div>
+
+
+                 <!-- ------- Select Gender-------  -->
+                 <div class="col-12 mt-2 mb-3">
+                   <select class="form-select" name="gender" aria-label=".form-select-sm example">
+                       <option selected>Select Gender</option>
+                       <option value="male">Male</option>
+                       <option value="female">Female</option>
+                       <option value="other">Other</option>
+                     </select>
+               </div>
+       
+                <!-- ====== Profile Photo--------  -->
+
+                <div class="col-12 mt-3">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Profile Photo</label>
+                    <input class="form-control" type="file" name="image" id="formFile">
+                    </div>
+                </div>
+    
+
+                <!-- ---------Instruction Start --------------  -->
+                <div class="suggetions">
+                    <p style="font-size: 15px; color:green;">  <span style="color
+                    :red;"> &#9733;</span> Photo formate must be jpg/jpeg/png and maximum size 300Kb </p>
+                   </div>
+                   
+                   <div class="suggetions">
+                    <p style="font-size: 15px; color: green;"> <span style="color
+                        :red;"> &#9733;</span> Password must be between 6 to 20 characters which contain at least one numeric , one uppercase and one lowercase letter</p>
+                   </div>
+               <!-- ---------Instruction End --------------  -->
+               
+               <div class="col-12 mt-2 mb-3 d-flex justify-content-center">
+                 <input type="submit" class="btn btn-primary px-5" value="SUBMIT">
+                </div>
+               </div>
+
+               </form>
+
+        </div>
+    </div>
+    </div>
+</section>
+
+<%-include('../adminLayouts/adminFooter')%>

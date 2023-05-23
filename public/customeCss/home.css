@@ -1,0 +1,89 @@
+.card-wrapper .card-body img{
+width:250px;
+height: 200px;
+}
+.full-home-page{
+    background:#f4f8ff;
+}
+
+@keyframes bounce{
+    0%{
+        -webkit-transform:translateY(0) ;
+        transform: translateY(0);
+    }
+    50%{
+        -webkit-transform:translateY(1.25rem) ;
+        transform: translateY(1.25rem);
+    }
+    100%{
+        -webkit-transform:translateY(0) ;
+        transform: translateY(0);
+    }
+}
+.hero-content img{
+ animation: bounce 2.5s ease-in-out infinite;
+}
+
+/* ------------- css for slider --------  */
+#carouselExampleDark{
+    height:450px;
+    object-fit: cover;
+   }
+   #carouselExampleDark img{
+    height:450px;
+   }
+
+   .image-slide-full{
+    border:2px solid black;
+    border-radius: 3px;
+   }
+
+   @media (max-width:1200px){
+    #carouselExampleDark{
+    height:400px;
+    object-fit: cover;
+
+   }
+   #carouselExampleDark img{
+    height:400px;
+   }
+   }
+
+   @media (max-width:800px){
+    #carouselExampleDark{
+    height:350px;
+    object-fit: cover;
+
+   }
+   #carouselExampleDark img{
+    height:350px;
+    aspect-ratio: 3/2;
+   }
+   }
+
+   @media (max-width:500px){
+    #carouselExampleDark{
+    height:300px;
+    object-fit: cover;
+
+   }
+   #carouselExampleDark img{
+    height:300px;
+    aspect-ratio: 3/2;
+   }
+   }
+
+
+
+@media  (min-width: 760px) and (max-width: 922px){
+.card-wrapper .card-body img{
+width:200px;
+height: 180px;
+}
+}
+@media (min-width: 570px){
+    .card-wrapper .card-body img{
+    width:220px;
+    height: 180px;
+    }
+    }

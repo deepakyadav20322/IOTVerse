@@ -1,0 +1,149 @@
+<%-include('../layouts/header')%>
+
+
+
+
+<section class="event-menu-section py-3">
+  <!-- background-color: rgb(223,231,247); -->
+   
+  <div class="event-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center fw-bold fs-2 border border-bottom-2 border-dark EH-content">
+          ALL  &nbsp; EVENTS
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <% 
+    if(events.length > 0){
+    for(let i= 0; i < events.length ; i++){
+        %>
+        <div class="bindEventDiv my-5 rounded-3">
+
+    <div class="container" style="background:rgb(128, 187, 253);">
+      <div
+        class="row border border-dark border-2 border-bottom-0 justify-content-center rounded-3"
+      >
+        <div
+          class="col-4 col-md-3 d-flex justify-content-center align-items-center flex-column row border-end-2 border-dark text-center bg-dark text-white event-black-box">
+          
+         <h2>
+           <% date = new Date(events[i].eventdateStart);%>
+            <%= date.getDate() %>
+          <span>
+            <% date = new Date(events[i].eventdateStart);%>
+            <%= date.toLocaleString('default', { month: 'long' }) %>
+          </span>
+        </h2>
+          <p><%
+             dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            date = new Date(events[i].eventdateStart);
+            
+            %>
+            <% x= date.getDay()%>
+            <%=dayNames[x]%>
+            <span>, <% date = new Date(events[i].eventdateStart);%>
+               <%= date.getFullYear()%>
+            </span>
+          </p>
+          
+        </div>
+        <div class="col-8 col-md-9 px-5">
+          <h2 class=""><%= events[i].eventName%></h2>
+          <h4><%= events[i].eventSubname%></h4>
+          <p class="eventTime-box">TIMING : - <span><%= events[i].eventTime%></span></p>
+        </div>
+      </div>
+    </div>
+    <!-- -------- This is accordion for full event information ---------- -->
+    <div class="container rounded-3">
+      <div class="row">
+        <div
+          class="accordion px-0 border border-dark border-2 border-top-0 rounded-3"
+          id="accordionPanelsStayOpenExample"
+        >
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button
+                class="accordion-button collapsed text-white"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#event-<%= i %>"
+                aria-expanded="false"
+                aria-controls="event-<%= i %>"
+              >
+                Click here to take more Information about event.......
+              </button>
+            </h2>
+            <div
+              id="event-<%= i %>"
+
+              class="accordion-collapse collapse"
+              aria-labelledby="<%= events[i].eventName%>"
+            >
+              <div class="accordion-body accordion-body-content">
+                <div class="container px-0">
+                  <div class="row justify-content-center align-item-center flex-column mx-auto">
+                    <div class=" col-12 d-flex justify-content-end align-item-center flex-row">
+                    
+                     <h3 class="text-dark"> 
+                        <!-- This the text area content with count of spaces and newline -->
+                     </h3>
+                     <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#eventMoreInfo<%=i%>">
+                      More Information
+                      </button>
+
+                       <!-- Modal -->
+                      <div class="modal fade" id="eventMoreInfo<%=i%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Information about Event</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-left" >
+                              <p style="white-space:pre"><%=events[i].eventDiscription%></p>
+                              
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+                    <div
+                      class=" col-12 d-flex justify-content-center align-items-center mx-auto">
+                      <img src="/event-images/<%=events[i].eventImage%>" alt="event image" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <%
+}
+}
+else{
+    %>
+    <h3 class="text-center my-5"> ---- No Any Events Available ----</h3>
+    <%
+}
+
+%>
+
+</section>
+
+
+
+<%-include('../layouts/footer')%>

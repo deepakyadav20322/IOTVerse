@@ -1,0 +1,8 @@
+.editUserBYadmin{
+    min-height: 100vh;
+    background-color: rgb(223,231,247);
+
+}
+.editUserBYadmin .form-control:focus{
+    box-shadow: none;
+}

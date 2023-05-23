@@ -1,0 +1,81 @@
+#dir_email_var{
+    width:100%;
+    margin:auto;
+    height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background:rgb(223,231,247) ;
+}
+
+#dir_email_var h2{
+    text-align: center;
+}
+#dir_email_var p{
+    text-align: center;
+    padding: 5px 0;
+}
+
+#dir_email_var #emailvarificationForm{
+   
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#dir_email_var #emailvarificationForm input[type="email"]{
+ width:600px;
+ padding: 10px;
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ border: none;
+ outline: none;
+ background-color: #fff;
+ transition: all 0.3s ease;
+}
+
+#dir_email_var #emailvarificationForm input[type="email"]:active{
+    transform: scale(1.1);
+}
+#dir_email_var #emailvarificationForm input[type="submit"]{
+    padding: 10px 40px;
+    font-weight: 600;
+    margin-top: 15px;
+    border: 2px solid #0D6EFD ;
+    outline: none;
+    color: white;
+    background:  #0D6EFD ;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    
+}
+#dir_email_var #emailvarificationForm input[type="submit"]:hover{
+   background: white;
+   color:#0D6EFD;
+   transform: scale(1.05);
+}
+@media (min-height:800px){
+    #dir_email_var{
+       height: 73vh;
+    }
+}
+@media (max-width:604px){
+    #dir_email_var #emailvarificationForm input[type="email"]{
+        width:450px;
+       
+    }
+}
+@media (max-width:460px){
+    #dir_email_var #emailvarificationForm input[type="email"]{
+        width:370px;
+    }
+}
+@media (max-width:300px){
+    #dir_email_var #emailvarificationForm input[type="email"]{
+        width:270px;
+    }
+}

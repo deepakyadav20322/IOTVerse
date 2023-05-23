@@ -1,0 +1,53 @@
+
+ /* ------------------------------css for search section on admin pannel -----------------  */
+
+.admin-main{
+    min-height: 100vh;
+}
+
+#search-section form{
+    width: 100%;
+    padding: 20px;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+#search-section input{
+    padding: 10px 13px;
+   
+}
+#search-section input[type="text"]{
+
+    width:80%;
+    margin-right: 5px;
+    
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+}
+#search-section input[type="submit"]{
+    background: #3E8DEC;
+    color: white;
+    padding:13px 10px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+ }
+
+   /* CSs for show data in table ----------------  */
+   .all-users-data .show-user-row{
+    overflow: scroll;
+    border: 2px solid black;
+    max-height: 600px;
+   }
+   
+
+   /* disable the shadow of toggle  */
+   .admin-toggle {
+    box-shadow: none;
+}

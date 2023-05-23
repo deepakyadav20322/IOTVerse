@@ -1,0 +1,82 @@
+<%-include('../adminLayouts/adminHeader')%>
+
+
+<div class="addEvent py-2">
+
+    <!-- --------------form container for edit user-------------------------------  -->
+    <div class="container pb-5 pt-2 border border-1 rounded-2 border-dark" >
+          
+      <div class="container  border-bottom border-dark py-2">
+        <div class="row">
+         
+          <div class="col-12 text-right d-flex justify-content-end align-items-center">
+              <a class="btn btn-primary" href="/admin/adminDashboard"><span class="fw-bold">&#8592;</span>Dashboard</a>
+          </div>
+        </div>
+      </div>
+
+        <h3 class="text-center">ADD NEW EVENT</h3>
+        <form class="row g-3 justify-content-center mx-auto" enctype="multipart/form-data" method="post" action="/admin/addEvent" >
+                 <!-- -----it is for take specific user id for recognisation---- -->
+                 <!-- <input type="hidden" name="user_id"/> -->
+                
+                 <% 
+                 if(typeof message1!='undefined'  ){
+                 %>
+         
+                 <p class="text-center fs-4" style="color:rgb(3, 116, 3);">  <span class="warning-mess"> &#9673; </span> <%= message1.msg %></p>
+                 <%}
+                else if(typeof message!='undefined'){ %>
+               <p class="text-center fs-4" style="color:rgb(3, 116, 3);">  <span class="warning-mess"> &#9673; </span> <%= message %></p>
+                   <% } %>
+
+
+
+
+            <div class="col-md-5">
+              <label for="Ename" class="form-label">Event Name</label>
+              <input type="text" name="eventName" class="form-control" id="Ename" >
+            </div>
+            <div class="col-md-5">
+              <label for="Esubname" class="form-label">Event Subname</label>
+              <input type="text" name="eventSubname" class="form-control" id="Esubname" required>
+            </div>
+            <div class="col-md-10">
+              <label for="Elocation" class="form-label">Event Location</label>
+              <input type="text" name="eventLocation" class="form-control" id="Elocation" placeholder="eg : REC Banda" required>
+            </div>
+            <div class="col-md-10">
+              <label for="Etime" class="form-label">Event Time</label>
+              <input type="text" name="eventTime" class="form-control"  id="Etime" placeholder="10:00 pm" required>
+            </div>
+            
+            <div class="col-md-5">
+                <label for="Estartdate" class="form-label">Event Start Date</label>
+                <input type="date" name="eventdateStart" class="form-control"  id="Estartdate" required>
+            </div>
+            
+            <div class="col-md-5">
+                <label for="Eenddate" class="form-label">Event End Date</label>
+                <input type="date" name="eventdateEnd" class="form-control"  id="Eenddate" placeholder="10:00 pm" required>
+            </div>
+            <div class="col-md-10">
+                <label for="Eimage" class="form-label">Event Image</label>
+                <input type="file" name="eventImage" class="form-control"  id="Eimage" required>
+              </div>
+
+            <div class="col-md-10">
+                <label for="Ediscription" class="form-label">Event Discription</label><br>
+                 <textarea class="form-control" name="eventDiscription" id="Ediscription" rows="8" placeholder="Write your event discription in a proper formate"></textarea>
+
+              </div>
+           
+            <div class="col-md-8 text-center">
+              <button type="submit" class="btn btn-primary">ADD EVENT</button>
+            </div>
+          </form>
+    </div>
+</div>
+
+
+
+<%-include('../adminLayouts/adminFooter')%>

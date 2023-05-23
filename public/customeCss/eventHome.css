@@ -1,0 +1,80 @@
+.event-menu-section{
+    min-height: 70vh;
+    background:#f4f8ff;
+
+}
+/* .bindEventDiv{
+    width:90%;
+} */
+
+.accordion-body-content img{
+width: 80%;
+aspect-ratio: 16 / 9;
+border: 2px solid black;
+border-radius: 20px;
+/* background:rgb(223,231,247); */
+}
+
+.accordion-body-content h3{
+  font-size: 1.2rem;
+}
+
+.event-black-box h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color:orange;
+}
+.event-black-box h2 span{
+    font-size: 1.2rem;
+}
+.event-black-box p{
+    font-size: 1rem;
+    font-weight: normal;
+    color:orange;
+}
+
+.event-menu-section .accordion-collapse{
+    
+    background:rgb(128, 187, 253);
+}
+
+.event-menu-section .accordion-button:focus{
+    border-color:rgb(14, 13, 13);
+    box-shadow: none;
+}
+.event-menu-section .accordion-button{
+   
+    background:rgb(128, 187, 253);
+   
+}
+
+.eventTime-box{
+    padding: 5px 10px;
+    border-radius: 30px;
+    background: orange;
+    display: inline-block;
+}
+
+
+.event-heading .row .EH-content{
+    background-color: orange;
+    border-radius: 20px;
+}
+
+@media (max-width:900px){
+    .accordion-body-content img{
+          height: 280px;
+          width: 100%;
+    }
+}
+@media (max-width:500px){
+    .accordion-body-content img{
+          height: 250px;
+    }
+}
+@media (max-width:580px){
+    .event-heading .row{
+        margin:auto 10px;
+    }
+    
+}

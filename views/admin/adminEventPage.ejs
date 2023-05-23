@@ -1,0 +1,183 @@
+<%-include('../adminLayouts/adminHeader')%>
+
+
+<section class="total-events" style="background-color:rgb(223,231,247); min-height: 100vh;">
+
+<div class="container-fluid border border-dark py-3">
+  <div class="row justify-content-around align-items-center">
+    <div class="col-6 text-center fw-bold fs-3">
+        Total events conducted by IOT_Verse
+    </div>
+    <div class="col-6 text-center">
+        <a class="btn btn-primary" href="/admin/adminDashboard"><span class="fw-bold">&#8592;</span>Dashboard</a>
+    </div>
+  </div>
+</div>
+
+ <!-- --------------------------------------------three event info boxes code -------------------------------- -->
+ <div class="evet-info-boxes">
+    <div class="container border border-dark my-4">
+    <div class="row d-flex justify-content-between mx-2 mx-sm-0">
+      <div class="col-md-3 border border-dark my-3 text-center bg-success text-white rounded-3">
+        <div class="box">
+          <div class="box-header">
+            <h2>Total Events</h2>
+          </div>
+          <div class="box-body">
+            <h2><%=events.length%></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 border border-dark  my-3 text-center bg-success text-white rounded-3">
+        <div class="box">
+          <div class="box-header">
+            <h2>Successful Event</h2>
+            <!-- <a href="#">View all</a> -->
+          </div>
+          <div class="box-body">
+            <h2><%=pastEvents%></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 border border-dark  my-3 text-center bg-danger text-white rounded-3">
+        <div class="box">
+          <div class="box-header">
+            <h2>Comming Events</h2>
+            <!-- <a href="#">View all</a> -->
+          </div>
+          <div class="box-body">
+            <h2><%=commingEvent%></h2>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+</div>
+  </div>
+
+           <!-- -------------------------------------********************* --------------- -->
+
+
+  <!-- ======================== Showing the all event data in table form ================================   -->
+   <!-- ---------- THIS TABLE IS BASDED ON Admin dashboard table then that's css also apply on it---------- -->
+           <section class="all-users-data my-2">
+            <div class="show-data-users">
+                <h3 class="text-center">All Event Data</h3>
+                <div class="container">
+                    <div class="row show-user-row">
+                        <div class="col-12">
+              
+
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead class=" border border-bottom-1 table-secondary text-center">
+                                  <tr class="border border-dark border-bottom-2">
+                                   
+                                    <th scope="col">S.NO:</th>
+                                    <th scope="col">EventName</th>
+                                    <th scope="col">EventSubname</th>
+                                    <th scope="col">EventTime</th>
+                                    <th scope="col">Event Start Date</th>
+                                    <th scope="col">Event End Date</th>
+                                    <th scope="col">Event Location</th>
+                                    <th scope="col">Actions</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                  
+                                    <% 
+                                    if(events.length > 0){
+                                    for(let i= 0; i < events.length ; i++){
+                                        %> 
+                                        <tr class="border border-dark border-bottom-1 ">
+                                            <td><%= i+1 %> </td>
+                                             <td><%= events[i].eventName %> </td>
+                                            
+                                             <td><%= events[i].eventSubname%></td>
+                                             <td><%= events[i].eventTime%></td>
+                                             <td><% 
+                                                    date = new Date(events[i].eventdateStart);
+                                                %>
+                                                <%= 
+                                                    date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
+                                                %>
+                                            </td> 
+                                             <td><% 
+                                                    date = new Date(events[i].eventdateEnd);
+                                                %>
+                                                <%= 
+                                                    date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
+                                                %>
+                                            </td> 
+                                             <td><%= events[i].eventLocation%></td>
+                                             
+                                        
+                                             <td>
+                                                <!-- <a href="/admin/deleteEvent?id=<%=events[i]._id%>" class="mx-1"><i class="fa-solid fa-trash delete text-danger"></i></a>  -->
+
+              <!-- ------------------------------Delete User  START ---------------------------------->
+                                              <!-- Button trigger modal gor delete -->
+                                              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUser<%=i%>">
+                                                Delete
+                                               </button>
+
+                                               <!-- Modal -->
+                                               <div class="modal fade" id="deleteUser<%=i%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                 <div class="modal-dialog modal-dialog-centered">
+                                                   <div class="modal-content">
+                                                     <div class="modal-header">
+                                                       <h5 class="modal-title" id="exampleModalLabel">DELETE EVENT</h5>
+                                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                     </div>
+                                                     <div class="modal-body">
+                                                       <p class="text-start">Are you sure, you wnat to delete the event?</p>
+                                                        <p class="text-dark text-start fw-bold">Name:- <span><%=events[i].eventName%></span></p>
+                                                     </div>
+                                                     <div class="modal-footer">
+                                                       <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                                       <!-- <button type="button" class="btn btn-primary">Yes</button> -->
+                                                       <a href="/admin/deleteEvent?id=<%=events[i]._id%>" class="mx-1 btn btn-danger">Yes</a> 
+                                                       
+                                                     </div>
+                                                   </div>
+                                                 </div>
+                                               </div>
+
+
+        <!-- ------------------------------Delete Event  END ------------------- -->
+
+
+                                                <a href="/admin/updateEvent?id=<%=events[i]._id%>" class="mx-1"><i class="fa-solid fa-pen update text-success"></i></a></td>
+                                            </td>   
+                                             
+                                        </tr>
+                                        <%
+                                    }
+                                    }
+                                    else{
+                                        %>
+                                    <tr>
+                                        <td class="fw-bold" colspan="8">No Data Available</td>
+                                    </tr>
+                                    <%
+                                    }
+                                    
+                                    %>
+                                  
+                                </tbody>
+                              </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </section>
+
+  </section>
+
+
+
+</section>
+
+
+<%-include('../adminLayouts/adminFooter')%>
