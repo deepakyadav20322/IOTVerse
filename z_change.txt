@@ -1,0 +1,10 @@
+
+-----------------------========================== CHANGES MUST DO before host  -===================-----------------
+
+mailvalification link =  const verificationLink = `http://127.0.0.1:${process.env.PORT}/mailVerifyPage?id=${user_id}`;
+
+jaha 127.0.0.1 hai vha vha deploy karne ke samay change karana padega............
+
+this changes occure multiple places .........................
+
+This change occure both admin and user controler both.?????
